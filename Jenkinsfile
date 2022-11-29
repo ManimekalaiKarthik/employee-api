@@ -21,8 +21,8 @@ pipeline {
 
      stage('Deployment') {
       environment{
-    	CLIENT_ID = Credentials('DEV_CLIENT_ID')
-    	CLIENT_SECRET = Credentials('DEV_CLIENT_SECRET')
+    	CLIENT_ID = credentials('DEV_CLIENT_ID')
+    	CLIENT_SECRET = credentials('DEV_CLIENT_SECRET')
     }
     	steps {
             bat 'mvn -U -V -e -B -DskipTests -Pdev deploy -DmuleDeploy -Danypoint.username=%ANYPOINT_CREDS_USR% -Danypoint.password=%ANYPOINT.CREDS_PSW% -Danypoint.platform.client_id=%CLIENT_ID% -Danypoint.platform.client_secret=%CLIENT_SECRET%'

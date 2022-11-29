@@ -128,7 +128,7 @@ output application/json
 ---
 {
   status: 200,
-  message: "success"
+  message: "Employee created"
 }]]></ee:set-payload>
             </ee:message>
         </ee:transform>

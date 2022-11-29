@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="employeeapi-test-suite.xml" />
+	<munit:test name="employeeapi-test-suite-post:\add-employee:application\json:employeeapi-configTest" doc:id="2f75e6f3-34ed-4186-80c5-a45715f8dbd2" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to post:\add-employee:application\json:employeeapi-config" doc:id="58087a54-93a6-4bfc-a5c4-30f5f50fa3d3" name="post:\add-employee:application\json:employeeapi-config"/>
+		</munit:execution>
+		<munit:validation >
+			<logger level="INFO" doc:name="Logger" doc:id="7d59b3eb-e225-4e87-96b8-94001ba09572" message="#[payload]"/>
+			<munit-tools:assert doc:name="Assert not null" doc:id="a9624f42-1f60-4ded-88a8-3da4d923a8d0" />
+		</munit:validation>
+	</munit:test>
+
+
+</mule>

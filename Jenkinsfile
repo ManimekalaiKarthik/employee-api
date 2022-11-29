@@ -11,7 +11,7 @@ pipeline {
 
     stage('Test') {
       steps {
-          bat "***********Munit test case execution*************"
+          echo "***********Munit test case execution*************"
       }
     }
 

@@ -3,7 +3,7 @@ pipeline {
   agent any
   
   environment{
-    ANYPOINT_CREDS = Credentials('ANYPOINT_CREDENTIALS')
+    ANYPOINT_CREDS = credentials('ANYPOINT_CREDENTIALS')
     }
  
   stages {
